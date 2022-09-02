@@ -101,6 +101,9 @@ const Example = () => {
       console.log("result", result);
       setAllMessages((prevState) => [result, ...prevState]);
     };
+    eventSource.onerror = function (e) {
+      console.error(e);
+    };
     return eventSource;
   };
 
